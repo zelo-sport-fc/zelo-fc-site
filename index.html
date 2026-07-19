@@ -12,12 +12,11 @@
     <style>
         body { 
             font-family: 'Cairo', sans-serif; 
-            background-color: #121215; /* لون خلفية التطبيق */
+            background-color: #121215; 
             color: #ffffff;
             overflow-x: hidden;
         }
         
-        /* التدرج اللوني الأساسي للتطبيق */
         .text-gradient { 
             background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); 
             -webkit-background-clip: text; 
@@ -26,10 +25,12 @@
         .bg-gradient-primary { 
             background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); 
         }
+        .bg-gradient-success {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
         
-        /* تأثيرات البطاقات */
         .glass-card {
-            background: #1c1c22; /* لون بطاقات التطبيق */
+            background: #1c1c22; 
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -40,9 +41,11 @@
             border-color: rgba(252, 176, 69, 0.3);
         }
 
-        /* تأثيرات التوهج */
         .glow-effect { 
             box-shadow: 0 0 30px rgba(252, 176, 69, 0.4); 
+        }
+        .glow-effect-success {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
         }
         
         .hero-overlay { 
@@ -58,9 +61,17 @@
             <div class="hero-overlay absolute inset-0"></div>
             
             <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto mt-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-                    <span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span class="text-sm font-semibold text-gray-300">متوفر الآن على تليجرام Mini App</span>
+                
+                <!-- قسم الإشعارات أعلى العنوان -->
+                <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
+                        <span class="text-sm font-semibold text-gray-300">متوفر الآن على تليجرام Mini App</span>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 backdrop-blur-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+                        <span class="text-sm font-semibold text-green-400">🔥 تم إطلاق عملة $ZELOFC رسمياً</span>
+                    </div>
                 </div>
 
                 <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-4">
@@ -76,6 +87,12 @@
                 </p>
                 
                 <div class="flex flex-wrap gap-4 justify-center w-full">
+                    <!-- زر الشراء الجديد المضاف -->
+                    <a href="https://pump.fun/coin/BBQmpKimKwAHBoJN2TyRG2CSEYRZhkxfksu1D1q9pump" target="_blank" rel="noopener noreferrer" 
+                       class="bg-gradient-success glow-effect-success flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 active:scale-95 text-white w-full md:w-auto justify-center">
+                        <span>💎</span> شراء $ZELOFC
+                    </a>
+
                     <a href="https://t.me/Zelo_Sport_bot/app" target="_blank" rel="noopener noreferrer" 
                        class="bg-gradient-primary glow-effect flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 active:scale-95 text-white w-full md:w-auto justify-center">
                         <span>🚀</span> العب الآن مجاناً
@@ -158,7 +175,7 @@
         <section class="px-6 py-20 text-center relative">
             <div class="absolute inset-0 bg-gradient-primary opacity-5 blur-3xl rounded-full max-w-3xl mx-auto"></div>
             <div class="relative z-10 glass-card max-w-4xl mx-auto p-10 md:p-16 border-t-4 border-t-[#fcb045]">
-                <h2 class="text-3xl md:text-4xl font-black text-white mb-4">جاهز لدخول الملعب?</h2>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4">جاهز لدخول الملعب؟</h2>
                 <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
                     انضم إلى آلاف اللاعبين الآن وابدأ في بناء إمبراطوريتك من النقاط. فريقك المفضل بانتظار دعمك في قائمة الأندية!
                 </p>
