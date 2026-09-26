@@ -3,207 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zelo Sport | توقع، العب، واكسب</title>
+    <title>Zelo Sport | Solana-Powered Sports Prediction Mini App</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
     
     <style>
         body { 
             font-family: 'Cairo', sans-serif; 
-            background-color: #121215; 
+            background-color: #0b0b0e; 
             color: #ffffff;
             overflow-x: hidden;
         }
         
-        .text-gradient { 
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); 
+        /* نظام الألوان المطابق للتطبيق */
+        .text-gradient-solana { 
+            background: linear-gradient(135deg, #14F195, #00B4D8, #AB9FF2); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
-        .bg-gradient-primary { 
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); 
+        
+        .bg-gradient-solana { 
+            background: linear-gradient(135deg, #14F195, #00B4D8); 
         }
-        .bg-gradient-success {
-            background: linear-gradient(135deg, #10b981, #059669);
+
+        .bg-gradient-purple {
+            background: linear-gradient(135deg, #AB9FF2, #512DA8);
         }
         
         .glass-card {
-            background: #1c1c22; 
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(135deg, rgba(24, 24, 30, 0.85), rgba(15, 15, 18, 0.95));
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(252, 176, 69, 0.15);
-            border-color: rgba(252, 176, 69, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(20, 241, 149, 0.15);
+            border-color: rgba(20, 241, 149, 0.3);
         }
 
-        .glow-effect { 
-            box-shadow: 0 0 30px rgba(252, 176, 69, 0.4); 
+        .glow-solana { 
+            box-shadow: 0 0 25px rgba(20, 241, 149, 0.35); 
         }
-        .glow-effect-success {
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+
+        .glow-purple { 
+            box-shadow: 0 0 25px rgba(171, 159, 242, 0.35); 
+        }
+
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.3);
         }
         
         .hero-overlay { 
-            background: linear-gradient(180deg, rgba(18,18,21,0.85) 0%, rgba(18,18,21,1) 100%); 
+            background: linear-gradient(180deg, rgba(11,11,14,0.75) 0%, rgba(11,11,14,1) 100%); 
+        }
+
+        .badge-solana {
+            background: rgba(20, 241, 149, 0.1);
+            border: 1px solid rgba(20, 241, 149, 0.3);
+            color: #14F195;
+        }
+
+        .badge-hackathon {
+            background: rgba(171, 159, 242, 0.12);
+            border: 1px solid rgba(171, 159, 242, 0.3);
+            color: #AB9FF2;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-orange-500 selection:text-white">
+<body class="antialiased selection:bg-[#14F195] selection:text-black">
 
     <main>
-        <section class="relative flex items-center justify-center min-h-[90vh] overflow-hidden">
-            <img class="absolute inset-0 w-full h-full object-cover opacity-40" loading="lazy" src="https://images.pexels.com/photos/15779126/pexels-photo-15779126.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="ملعب كرة قدم">
+        <!-- HERO SECTION -->
+        <section class="relative flex items-center justify-center min-h-[92vh] overflow-hidden">
+            <img class="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" src="https://images.pexels.com/photos/15779126/pexels-photo-15779126.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Zelo Sport Stadium">
             <div class="hero-overlay absolute inset-0"></div>
             
-            <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto mt-10">
+            <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto mt-6">
                 
-                <!-- قسم الإشعارات أعلى العنوان -->
-                <div class="flex flex-col sm:flex-row gap-3 mb-6">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-                        <span class="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
-                        <span class="text-sm font-semibold text-gray-300">متوفر الآن على تليجرام Mini App</span>
+                <!-- شارات الإثبات والترحيب بالمسابقة -->
+                <div class="flex flex-wrap gap-3 justify-center mb-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-hackathon backdrop-blur-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-[#AB9FF2] animate-pulse"></span>
+                        <span class="text-sm font-bold">🏆 Colosseum Hackathon Submission</span>
                     </div>
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 backdrop-blur-sm">
-                        <span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-                        <span class="text-sm font-semibold text-green-400">🔥 تم إطلاق عملة $ZELOFC رسمياً</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-solana backdrop-blur-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-[#14F195] animate-pulse"></span>
+                        <span class="text-sm font-bold">⚡ Powered by Solana Web3</span>
                     </div>
                 </div>
 
                 <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-4">
-                    Zelo <span class="text-gradient">Sport</span>
+                    Zelo <span class="text-gradient-solana">Sport</span>
                 </h1>
                 
-                <p class="text-xl md:text-3xl font-bold text-gray-300 mb-6">
-                    توقع المباريات، اهزم خصومك، واجمع عملات <span class="text-[#fcb045]">ZELO FC</span>
+                <p class="text-xl md:text-3xl font-bold text-gray-200 mb-4">
+                    توقع المباريات، ارتقِ للترتيب، واكسب مكافآت <span class="text-[#facc15] font-mono">$ZELOFC</span> على شبكة Solana
                 </p>
                 
-                <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl">
-                    التجربة الاجتماعية الأولى لكرة القدم على تليجرام. ضع توقعاتك لأكبر الدوريات العالمية، نافس في قوائم المتصدرين، وحوّل شغفك الرياضي إلى مكافآت رقمية حقيقية!
+                <p class="text-base md:text-lg text-gray-400 mb-10 leading-relaxed max-w-2xl">
+                    تطبيق تلغرام مصغر (Telegram Mini App) يربط شغف كرة القدم بتكنولوجيا الـ Web3. ضع توقعاتك للدوريات الكبرى، تابع أسعار السوق المباشرة، وحوّل نقاطك إلى توكينات حقيقية On-Chain!
                 </p>
                 
+                <!-- أزرار الإجراءات الرئيسية -->
                 <div class="flex flex-wrap gap-4 justify-center w-full">
-                    <!-- زر الشراء الجديد المضاف -->
-                    <a href="https://pump.fun/coin/BBQmpKimKwAHBoJN2TyRG2CSEYRZhkxfksu1D1q9pump" target="_blank" rel="noopener noreferrer" 
-                       class="bg-gradient-success glow-effect-success flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 active:scale-95 text-white w-full md:w-auto justify-center">
-                        <span>💎</span> شراء $ZELOFC
+                    <a href="https://t.me/Zelo_Sport_bot/app" target="_blank" rel="noopener noreferrer" 
+                       class="bg-gradient-solana glow-solana flex items-center gap-3 px-8 py-4 rounded-xl font-black text-lg transition-all hover:scale-105 active:scale-95 text-black w-full md:w-auto justify-center">
+                        <span>⚡</span> افتح التطبيق على تلغرام
                     </a>
 
-                    <a href="https://t.me/Zelo_Sport_bot/app" target="_blank" rel="noopener noreferrer" 
-                       class="bg-gradient-primary glow-effect flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 active:scale-95 text-white w-full md:w-auto justify-center">
-                        <span>🚀</span> العب الآن مجاناً
+                    <a href="https://pump.fun/coin/BBQmpKimKwAHBoJN2TyRG2CSEYRZhkxfksu1D1q9pump" target="_blank" rel="noopener noreferrer" 
+                       class="bg-gradient-purple glow-purple flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 active:scale-95 text-white w-full md:w-auto justify-center">
+                        <span>🪙</span> شراء $ZELOFC
                     </a>
                     
-                    <a href="https://x.com/Zelo_Sport" target="_blank" rel="noopener noreferrer" 
-                       class="glass-card flex items-center gap-3 px-8 py-4 font-bold text-lg transition-all hover:bg-white/5 text-gray-300 w-full md:w-auto justify-center">
-                        <span>🐦</span> تابعنا على X
+                    <a href="https://github.com/zelo-sport-fc/zelo-fc" target="_blank" rel="noopener noreferrer" 
+                       class="glass-card flex items-center gap-3 px-6 py-4 font-bold text-lg transition-all hover:bg-white/10 text-gray-300 w-full md:w-auto justify-center border-gray-700">
+                        <span>💻</span> GitHub Repository
                     </a>
                 </div>
             </div>
         </section>
 
-        <div class="border-y border-white/5 bg-black/50 backdrop-blur-md py-6">
-            <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-x-reverse divide-white/5">
+        <!-- STATS / PROOFS BAR -->
+        <div class="border-y border-white/10 bg-black/60 backdrop-blur-md py-6">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-x-reverse divide-white/10">
                 <div>
-                    <div class="text-3xl font-black text-[#fcb045] mb-1">+10</div>
-                    <div class="text-sm text-gray-400">دوريات كبرى</div>
+                    <div class="text-3xl font-black text-[#14F195] font-mono mb-1">Solana</div>
+                    <div class="text-xs md:text-sm text-gray-400">On-Chain Rewards</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-black text-white mb-1">100%</div>
-                    <div class="text-sm text-gray-400">مجاني للعب</div>
+                    <div class="text-3xl font-black text-[#AB9FF2] font-mono mb-1">Supabase</div>
+                    <div class="text-xs md:text-sm text-gray-400">Edge Functions & API</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-black text-white mb-1">ZELO FC</div>
-                    <div class="text-sm text-gray-400">عملة رقمية حصرية</div>
+                    <div class="text-3xl font-black text-[#facc15] font-mono mb-1">ZELOFC</div>
+                    <div class="text-xs md:text-sm text-gray-400">Utility Token</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-black text-green-500 mb-1">Live</div>
-                    <div class="text-sm text-gray-400">تحديثات فورية</div>
+                    <div class="text-3xl font-black text-blue-400 font-mono mb-1">Live Feed</div>
+                    <div class="text-xs md:text-sm text-gray-400">Real-Time SOL Price</div>
                 </div>
             </div>
         </div>
 
-        <section class="px-6 py-24 max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-black mb-4">لماذا تلعب <span class="text-gradient">معنا؟</span></h2>
-                <p class="text-gray-400 text-lg">صممنا بيئة متكاملة تجمع بين متعة كرة القدم وقوة العملات الرقمية.</p>
+        <!-- HACKATHON & WEB3 ARCHITECTURE SHOWCASE -->
+        <section class="px-6 py-20 max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-5xl font-black mb-4">مميزات تطبيق <span class="text-gradient-solana">Zelo Sport</span></h2>
+                <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+                    بنية برمجية متكاملة تضمن السرعة، الأمان، والسهولة في تجربة التوقعات الرياضية.
+                </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-8 relative overflow-hidden">
-                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-[#833ab4]/20 rounded-full blur-2xl"></div>
-                    <div class="text-4xl mb-4">🏆</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">تحديات يومية أسبوعية</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        توقع نتائج مباريات دوري أبطال أوروبا، الدوري الإنجليزي، السعودي، والمزيد. احصل على نقاط بناءً على دقة توقعاتك وتصدر الترتيب.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 relative overflow-hidden">
-                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-[#fcb045]/20 rounded-full blur-2xl"></div>
-                    <div class="text-4xl mb-4">🪙</div>
-                    <h3 class="text-2xl font-bold text-[#fcb045] mb-3">اكسب عملات ZELO FC</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        نقاطك ليست مجرد أرقام! حوّل نجاحك في التوقعات، إتمام المهام، وتسجيل الدخول اليومي إلى رصيد حقيقي من عملات ZELO FC الرقمية.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 relative overflow-hidden">
-                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-[#fd1d1d]/20 rounded-full blur-2xl"></div>
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">نظام عمولة الإحالة المستمر</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        قم بدعوة أصدقائك عبر رابطك الخاص، واحصل على 10% عمولة مستمرة من كل النقاط التي يجمعونها إلى الأبد! شارك المتعة وضاعف أرباحك.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 relative overflow-hidden">
-                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-[#10b981]/20 rounded-full blur-2xl"></div>
+                <!-- Card 1 -->
+                <div class="glass-card p-8 relative overflow-hidden border-t-2 border-t-[#14F195]">
                     <div class="text-4xl mb-4">⚡</div>
-                    <h3 class="text-2xl font-bold text-green-400 mb-3">سلس ومدمج مع تليجرام</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        لا داعي لتحميل أي تطبيقات خارجية. افتح بوت تليجرام الخاص بنا، وابدأ اللعب فوراً بلمسة واحدة بواجهة حديثة وفائقة السرعة.
+                    <h3 class="text-2xl font-bold text-white mb-3">ربط محفظة Solana والمطالبة بالتوكينات</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        يمكن للمستخدمين ربط محفظة Solana الخاصة بهم (مثل Phantom) أو إدخال عنوانها، والمطالبة بتوكينات ZELOFC مباشرة On-Chain فور إتمام التوقعات والمهام.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-8 relative overflow-hidden border-t-2 border-t-[#AB9FF2]">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-2xl font-bold text-[#AB9FF2] mb-3">بث مباشر لأسعار السوق (Real-Time Feed)</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        يتضمن التطبيق بطاقات تفاعلية تعرض سعر عملة Solana ($SOL) بشكل لحظي داخل واجهة التطبيق عبر Solana Web3 API لتزويد المستخدمين ببيانات التداول المباشرة.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-8 relative overflow-hidden border-t-2 border-t-[#facc15]">
+                    <div class="text-4xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold text-[#facc15] mb-3">توقعات وتحديات المباريات</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        تغطية لجميع الدوريات الكبرى (دوري أبطال أوروبا، الدوري الإنجليزي، الإسباني، وغيرها). يتم ربط نتائج المباريات آلياً وحساب الترتيب والنقاط بسرعة فائقة.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-8 relative overflow-hidden border-t-2 border-t-blue-500">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold text-blue-400 mb-3">خلفية برمجية سحابية ذكية (Supabase)</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        يعتمد التطبيق على Supabase Edge Functions بلغة TypeScript لضمان جلب المباريات وإدراج طلبات تحويل التوكينات بأعلى موثوقية وبدون خوادم معقدة.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section class="px-6 py-20 text-center relative">
-            <div class="absolute inset-0 bg-gradient-primary opacity-5 blur-3xl rounded-full max-w-3xl mx-auto"></div>
-            <div class="relative z-10 glass-card max-w-4xl mx-auto p-10 md:p-16 border-t-4 border-t-[#fcb045]">
-                <h2 class="text-3xl md:text-4xl font-black text-white mb-4">جاهز لدخول الملعب؟</h2>
-                <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-                    انضم إلى آلاف اللاعبين الآن وابدأ في بناء إمبراطوريتك من النقاط. فريقك المفضل بانتظار دعمك في قائمة الأندية!
+        <!-- CALL TO ACTION FOR JUDGES & USERS -->
+        <section class="px-6 py-16 text-center relative max-w-5xl mx-auto">
+            <div class="glass-card p-10 md:p-14 border border-[#14F195]/30 glow-solana">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4">جاهز لتجربة Zelo Sport؟</h2>
+                <p class="text-gray-300 text-base md:text-lg mb-8 max-w-xl mx-auto">
+                    افتح التطبيق المصغر على تلغرام، جرب التوقعات، وقم بربط محفظتك واستلام المكافآت الآن.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://t.me/ZeloSport" target="_blank" rel="noopener noreferrer" 
-                       class="bg-[#24A1DE] hover:bg-[#1d88be] flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white transition-all shadow-lg shadow-[#24A1DE]/20">
-                        <span>📢</span> قناة تليجرام
+                    <a href="https://t.me/Zelo_Sport_bot/app" target="_blank" rel="noopener noreferrer" 
+                       class="bg-gradient-solana text-black font-black flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-lg transition-all hover:scale-105">
+                        <span>🚀</span> ابدأ اللعب عبر البوت
                     </a>
-                    <a href="https://t.me/ZeloSport_Global" target="_blank" rel="noopener noreferrer" 
-                       class="bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white transition-all">
-                        <span>💬</span> مجتمع الدردشة
+                    <a href="https://x.com/Zelo_Sport" target="_blank" rel="noopener noreferrer" 
+                       class="glass-card border border-white/20 flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white transition-all hover:bg-white/10">
+                        <span>🐦</span> متابعة التحديثات على X
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="border-t border-white/5 bg-black/30 pt-10 pb-6 mt-10">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h3 class="text-2xl font-black mb-6">Zelo <span class="text-gradient">Sport</span></h3>
-            <p class="text-gray-500 text-sm mb-4">
-                تطبيق ألعاب وتوقعات ترفيهي. جميع الحقوق محفوظة © 2026
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-black/50 pt-10 pb-6 mt-12 text-center text-gray-500 text-sm">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-2xl font-black mb-3 text-white">Zelo <span class="text-gradient-solana">Sport</span></h3>
+            <p class="mb-4 text-xs md:text-sm text-gray-400">
+                Built for the Colosseum Solana Hackathon | Powered by Telegram Mini Apps & Supabase
             </p>
-            <div class="flex justify-center gap-4 text-gray-500 text-sm">
-                <a href="#" class="hover:text-[#fcb045] transition-colors">سياسة الخصوصية</a>
-                <span>|</span>
-                <a href="#" class="hover:text-[#fcb045] transition-colors">الشروط والأحكام</a>
-            </div>
+            <p class="text-xs text-gray-600">
+                جميع الحقوق محفوظة © 2026 Zelo Sport
+            </p>
         </div>
     </footer>
 
